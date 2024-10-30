@@ -1,0 +1,161 @@
+:root {
+    font-size: 62.5%; /* 1rem = 10px, easier to calculate */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1.6rem;
+}
+
+header {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 25rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding-top: 6rem;
+    box-shadow: 0.2rem 0 0.5rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul li {
+    padding: 1.5rem;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 1.6rem;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    margin-left: 26rem;
+    padding: 2rem;
+    padding-top: 10rem;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: calc(100vh - 10rem);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 0.1rem solid #e0e0e0;
+    font-size: 1.4rem;
+}
+
+th {
+    background-color: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+tr:hover td {
+    background-color: #e8f4ff;
+}
+
+td.highlight {
+    background-color: #cfe9fb;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+.phone-image {
+    width: 100%;
+    height: auto;
+    max-height: 15rem;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 20rem;
+    }
+    main {
+        margin-left: 21rem;
+        padding: 1.5rem;
+    }
+    th, td {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 5rem;
+        left: 0;
+        display: none;
+    }
+    .sidebar.open {
+        display: block;
+    }
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
