@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Information Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header id="header">
+        <div class="title-bar">
+            <span class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></span>
+            <h1>Phone Information Hub</h1>
+        </div>
+    </header>
+
+    <aside class="sidebar fixed" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#" data-brand="all">Home</a></li>
+                <li>
+                    <a href="#" class="brand-toggle" data-brand="Apple">Apple</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-series="iPhone 14 Series">iPhone 14 Series</a></li>
+                        <li><a href="#" data-series="iPhone 13 Series">iPhone 13 Series</a></li>
+                        <li><a href="#" data-series="iPhone SE Series">iPhone SE Series</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="brand-toggle" data-brand="Samsung">Samsung</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-series="Galaxy S Series">Galaxy S Series</a></li>
+                        <li><a href="#" data-series="Galaxy Note Series">Galaxy Note Series</a></li>
+                        <li><a href="#" data-series="Galaxy A Series">Galaxy A Series</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="brand-toggle" data-brand="Huawei">Huawei</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-series="P Series">P Series</a></li>
+                        <li><a href="#" data-series="Mate Series">Mate Series</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="brand-toggle" data-brand="Xiaomi">Xiaomi</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-series="Mi Series">Mi Series</a></li>
+                        <li><a href="#" data-series="Redmi Series">Redmi Series</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-brand="OPPO">OPPO</a></li>
+                <li><a href="#" data-brand="Vivo">Vivo</a></li>
+                <li><a href="#" data-brand="Honor">Honor</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="data-display" id="dataDisplay">
+            <h2>Phone Models Information</h2>
+            <div class="table-container" id="tableContainer">
+                <!-- Tables for different brands will be inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('.sidebar nav ul li a');
+            const tableContainer = document.getElementById('tableContainer');
+
+            const phoneTables = {
+                Apple: `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="13">iPhone Models</th>
+                            </tr>
+                            <tr>
+                                <th> </th>
+                                <th><img src="images/iphone3g.jpg" alt="iPhone 3G"></th>
+                                <th><img src="images/iphone4.jpg" alt="iPhone 4"></th>
+                                <th><img src="images/iphone5.jpg" alt="iPhone 5"></th>
+                                <th><img src="images/iphone6.jpg" alt="iPhone 6"></th>
+                                <th><img src="images/iphone7.jpg" alt="iPhone 7"></th>
+                                <th><img src="images/iphone8.jpg" alt="iPhone 8"></th>
+                                <th><img src="images/iphoneX.jpg" alt="iPhone X"></th>
+                                <th><img src="images/iphone11.jpg" alt="iPhone 11"></th>
+                                <th><img src="images/iphone12.jpg" alt="iPhone 12"></th>
+                                <th><img src="images/iphone13.jpg" alt="iPhone 13"></th>
+                                <th><img src="images/iphone14.jpg" alt="iPhone 14"></th>
+                                <th><img src="images/iphone16promax.jpg" alt="iPhone 16 Pro Max"></th>
+                            </tr>
+                            <tr>
+                                <th>Model Name</th>
+                                <th>iPhone 3G</th>
+                                <th>iPhone 4</th>
+                                <th>iPhone 5</th>
+                                <th>iPhone 6</th>
+                                <th>iPhone 7</th>
+                                <th>iPhone 8</th>
+                                <th>iPhone X</th>
+                                <th>iPhone 11</th>
+                                <th>iPhone 12</th>
+                                <th>iPhone 13</th>
+                                <th>iPhone 14</th>
+                                <th>iPhone 16 Pro Max</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Release Date</td>
+                                <td>2008</td>
+                                <td>2010</td>
+                                <td>2012</td>
+                                <td>2014</td>
+                                <td>2016</td>
+                                <td>2017</td>
+                                <td>2017</td>
+                                <td>2019</td>
+                                <td>2020</td>
+                                <td>2021</td>
+                                <td>2022</td>
+                                <td>2024</td>
+                            </tr>
+                            <tr>
+                                <td>Chip</td>
+                                <td>A1</td>
+                                <td>A4</td>
+                                <td>A6</td>
+                                <td>A8</td>
+                                <td>A10</td>
+                                <td>A11 Bionic</td>
+                                <td>A11 Bionic</td>
+                                <td>A13 Bionic</td>
+                                <td>A14 Bionic</td>
+                                <td>A15 Bionic</td>
+                                <td>A16 Bionic</td>
+                                <td>A18 Bionic</td>
+                            </tr>
+                            <tr>
+                                <td>Screen Size</td>
+                                <td>3.5"</td>
+                                <td>3.5"</td>
+                                <td>4.0"</td>
+                                <td>4.7"</td>
+                                <td>4.7"</td>
+                                <td>4.7"</td>
+                                <td>5.8"</td>
+                                <td>6.1"</td>
+                                <td>6.1"</td>
+                                <td>6.1"</td>
+                                <td>6.1"</td>
+                                <td>6.7"</td>
+                            </tr>
+                            <tr>
+                                <td>Memory</td>
+                                <td>128MB</td>
+                                <td>512MB</td>
+                                <td>1GB</td>
+                                <td>1GB</td>
+                                <td>2GB</td>
+                                <td>2GB</td>
+                                <td>3GB</td>
+                                <td>4GB</td>
+                                <td>4GB</td>
+                                <td>4GB</td>
+                                <td>6GB</td>
+                                <td>8GB</td>
+                            </tr>
+                            <tr>
+                                <td>Camera</td>
+                                <td>2MP</td>
+                                <td>5MP</td>
+                                <td>8MP</td>
+                                <td>8MP</td>
+                                <td>12MP</td>
+                                <td>12MP</td>
+                                <td>12MP Dual</td>
+                                <td>12MP Dual</td>
+                                <td>12MP Dual</td>
+                                <td>12MP Dual</td>
+                                <td>12MP Triple</td>
+                                <td>48MP Triple</td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td>$199</td>
+                                <td>$299</td>
+                                <td>$399</td>
+                                <td>$649</td>
+                                <td>$649</td>
+                                <td>$699</td>
+                                <td>$999</td>
+                                <td>$699</td>
+                                <td>$799</td>
+                                <td>$799</td>
+                                <td>$999</td>
+                                <td>$1199</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `
+            };
+
+            function displayPhones(brand, series) {
+                const key = series ? `${brand}-${series}` : brand;
+                tableContainer.innerHTML = phoneTables[key] || phoneTables['all'];
+            }
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const brand = link.getAttribute('data-brand');
+                    const series = link.getAttribute('data-series');
+                    displayPhones(brand, series);
+                });
+            });
+
+            // Toggle sub-menu visibility
+            const brandToggles = document.querySelectorAll('.brand-toggle');
+            brandToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const subMenu = toggle.nextElementSibling;
+                    if (subMenu) {
+                        subMenu.classList.toggle('visible');
+                    }
+                });
+            });
+
+            // Display all phones initially
+            displayPhones('all');
+
+            // Header resize on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.style.transform = 'scale(0.9)';
+                } else {
+                    header.style.transform = 'scale(1)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
